@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H1>Clickit</H1>
+    <a href="/">Home</a><br>
+    <a href="/add">Buy a Camera</a><br>
+    <a href="/list">Equipment list</a><br>
+
+    <h1>Update the book</h1>
+    <form action="/edit/{{ cam.id }}" method="post">
+        {% csrf_token %}
+        <table border="2">
+            <tr>
+                <td>Title</td>
+                <td><input type="text" name="Camera" value="{{ cam.camera }}"></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><input type="text" name="Lens" value="{{ cam.lens }}"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input type="number" name="Price" value="{{ cam.price }}"></td>
+            </tr>
+            
+        </table><br>
+        <tr>
+            <button id="">Update order</button>
+        </tr>
+    </form>
+</body>
+
+</html>

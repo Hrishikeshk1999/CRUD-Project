@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>list of all Equipments</h1>
+    <h1>{{success}}</h1>
+    <table border="3">
+        <tr>
+            <th>Id</th>
+            <th>Camera</th>
+            <th>Lens</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        {% for cam in cams %}
+        
+        <tr>
+            <td>{{ forloop.counter }}</td> <!--inbuilt function for counting iterations -->
+            <td>{{ cam.id }}</td>
+            <td>{{ cam.camera }}</td>
+            <td>{{ cam.lens }}</td>
+            <td>{{ cam.price }}</td>
+            <td>
+                <a href="/edit/{{cam.id}}">Update</a>&nbsp;
+                <a href="/delete/{{cam.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Clickit</H1>
+    <a href="/">Home</a><br>
+    <a href="/add">Buy a Camera</a><br>
+    <a href="/list">Equipment list</a><br>
+
+    <h1>Add Equipments</h1>
+    <form action="/savecam" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Camera</td>
+                <td><input type="text" name="Camera"></td>
+            </tr>
+            <tr>
+                <td>Lens</td>
+                <td><input type="text" name="Lens"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input type="number" name="Price"></td>
+            </tr>
+        </table><br>
+        <tr>
+            <button id="">Add Equipments</button>
+        </tr>
+    </form>
+</body>
+</html>
